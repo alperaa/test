@@ -16,6 +16,8 @@ public class ClockApp {
     public ClockApp() {
 		ClockTimer timer = new ClockTimer();
 		timer.start();
+                
+                AnalogClock clockA = new AnalogClock(timer);
     }
     
     /**

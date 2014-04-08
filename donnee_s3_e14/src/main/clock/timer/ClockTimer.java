@@ -52,21 +52,21 @@ public class ClockTimer extends Observable implements Runnable {
     /**
      * Returns the current hour.
      */
-    private int getHour() {
+    public int getHour() {
         return calendar.get(Calendar.HOUR_OF_DAY);
     }
 
     /**
      * Returns the current minute.
      */
-    private int getMinute() {
+    public int getMinute() {
         return calendar.get(Calendar.MINUTE);
     }
 
     /**
      * Returns the current second.
      */
-    private int getSecond() {
+    public int getSecond() {
         return calendar.get(Calendar.SECOND);
     }
 
