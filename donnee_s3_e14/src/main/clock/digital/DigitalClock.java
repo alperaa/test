@@ -27,7 +27,6 @@ import java.util.Observer;
  */
 public class DigitalClock extends JFrame implements Observer{
 
-
 	/**
 	 * 
 	 * @uml.property name="analogClockPanel"

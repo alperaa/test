@@ -18,7 +18,6 @@ import java.util.Observer;
  * @author alper_a
  */
 public class StringClock extends JFrame implements Observer{
-    private static final long serialVersionUID = 3258408447900069937L;
 
 	/**
 	 * 
