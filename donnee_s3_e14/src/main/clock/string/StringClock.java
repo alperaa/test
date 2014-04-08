@@ -43,7 +43,7 @@ public class StringClock extends JFrame implements Observer{
         System.out.println("Count: " + this.time.countObservers());
  //       System.out.println(this.time.countObservers());
         // Create and set up the window.
-        setTitle("Analog Clock");
+        setTitle("String Clock");
         addWindowListener(new DetachOnClosingWindowListener());
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
