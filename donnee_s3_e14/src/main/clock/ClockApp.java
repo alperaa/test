@@ -20,6 +20,7 @@ public class ClockApp {
                 
                 AnalogClock clockA = new AnalogClock(timer);
                 DigitalClock clockD = new DigitalClock(timer);
+                StringClock clockS = new DigitalClock(timer);
     }
     
     /**
