@@ -1,5 +1,13 @@
-package clock.analog;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+package clock.digital;
+
+
+import clock.analog.AnalogClockPanel;
 import clock.timer.ClockTimer;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -17,36 +25,42 @@ import java.util.Observer;
  * 
  * @author Andreas Ruppen
  */
-public class AnalogClock extends JFrame implements Observer{
-    private static final long serialVersionUID = 3258408447900069937L;
+public class DigitalClock extends JFrame implements Observer{
+
 
 	/**
 	 * 
 	 * @uml.property name="analogClockPanel"
 	 * @uml.associationEnd multiplicity="(1 1)"
 	 */
-	private AnalogClockPanel analogClockPanel;
+	private DigitalClockPanel digitalClockPanel;
+        
         private ClockTimer time;
+        
+      //  private int hour2, minute2, second2;
 
     /**
      * Creates a new instance of <code>AnalogClock</code> that observes the 
      * given clock timer.
      */
-    public AnalogClock(ClockTimer time) {  
+    public DigitalClock(ClockTimer time) {   
         this.time = time;
+        System.out.println("Count: " + this.time.countObservers());
+    //   this.time.addObserver(this);
         this.time.addObserver(this);
+        System.out.println("Count: " + this.time.countObservers());
+ //       System.out.println(this.time.countObservers());
         // Create and set up the window.
-        setTitle("Analog Clock");
+        setTitle("Digital Clock");
         addWindowListener(new DetachOnClosingWindowListener());
         
-       // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         // Create and set up the analog clock panel.
-        analogClockPanel = new AnalogClockPanel();
-        analogClockPanel.setPreferredSize(new Dimension(200, 200));
+        digitalClockPanel = new DigitalClockPanel();
+        digitalClockPanel.setPreferredSize(new Dimension(200, 100));
 
         // Add the panel to the window.
-        getContentPane().add(analogClockPanel, BorderLayout.CENTER);
+        getContentPane().add(digitalClockPanel, BorderLayout.CENTER);
 
         // Set screen position.
         setLocation(PositionManager.getUniqueInstance().getClockWindowPosition());
@@ -56,17 +70,12 @@ public class AnalogClock extends JFrame implements Observer{
         setVisible(true);
     }
     
-    /**
-     * Updates the clock.
-     */
-/*    public void update(int hour, int minute, int second) {
-        analogClockPanel.setTime(hour, minute, second);
-        analogClockPanel.repaint();
-    }
-*/
     public void update(Observable o, Object arg) {
-        analogClockPanel.setTime(time.getHour(), time.getMinute(), time.getSecond());
-        analogClockPanel.repaint();    }
+        digitalClockPanel.setTime(time.getHour(), time.getMinute(), time.getSecond());
+        digitalClockPanel.repaint();
+        System.out.println(time.getHour() + " " + time.getMinute() + " " + time.getSecond());
+        
+    }
     
     /**
      * A window listener that detaches the clock from the timer when the window 
