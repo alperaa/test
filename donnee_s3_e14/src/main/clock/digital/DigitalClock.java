@@ -22,7 +22,7 @@ import java.util.Observer;
 
 /**
  * An analog clock observing a clock timer.
- * 
+ * test
  * @author Andreas Ruppen
  */
 public class DigitalClock extends JFrame implements Observer{

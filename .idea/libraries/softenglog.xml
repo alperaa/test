@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="softenglog">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/donnee_s3_e14/lib/softenglog.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
